@@ -5,8 +5,8 @@ const http = require('http');
 const chatRouter = require('./routes/chat-route');
 const app = express();
 const server = http.createServer(app);
-const socketio = require("socket.io");
-const io = new socketio(server);
+const { Server } = require('socket.io');
+const io = new Server(server);
 
 // Declare PORT Variable
 const PORT = process.env.PORT || 5000;
@@ -26,12 +26,12 @@ io.on('connection', (socket) => {
     console.log('User is Disconnected');
   });
 
-  socket.on('chat message', (message) => {
-    io.emit('chat message', message);
+  socket.on('chat message', (chatmsg) => {
+    io.emit('chat message', chatmsg);
   });
 });
 
-// Listen to Server on Specified PORT
+// Listen to Server on Specific PORT
 server.listen(PORT, () => {
   console.log(`Serve is Running on Port: ${PORT}`);
 });

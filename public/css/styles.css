@@ -1,0 +1,17 @@
+
+
+.sidebar-style {
+    background-color: rgb(255, 255, 255);
+    height: 450px;
+    border-radius: 3px;
+    overflow-y: auto;
+}
+
+.chat-container {
+    border-color: rgb(239 239 239);
+    background-color: rgb(238 240 243);
+    padding: 6px;
+    width: auto;
+    text-align: left;
+    margin: 10px;
+}

@@ -24,7 +24,9 @@ exports.saveChatMessage = (req, res, next) => {
 // GET Chat Messages by Username
 exports.getChatMessagesByUser = (req, res, next) => {
     try {
+        console.log('username:: ' + req.params.username);
         if (req.params.username) {
+            
             const query = { username: req.params.username };
             dbConnect.then(db => {
                     Chat.find(query).then(chats => {
